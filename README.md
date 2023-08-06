@@ -1,0 +1,2 @@
+# NewSnips
+A news website
