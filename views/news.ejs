@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsnips</title>
+    <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/home-screen-13/512/News.png">
+    <link rel="stylesheet" href="styles/news2.css">
+</head>
+<body >
+    <%- include("partials/header.ejs") %>
+    <div class="heading-top">
+        <div class="card weather">
+            <a href="https://weather-pal-by-mythri.cyclic.app/" style="text-decoration: none;">                         
+                <div class="flexing">
+                    <div class="card-header">Weather in Hyderabad</div>
+                    <div class="run">
+                        <h3 ><%= weatherData.main.temp %>°C</h3>
+                        <img src="<%= icon %>" alt="" class="icon run">
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+    <div class="sample-card">
+        <% Clips.forEach(article => { %>
+            <div class="card text-left" >
+                <div class="card-header">
+                <%= article.source.name %>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><%= article.title %></h3>
+                    <p class="card-text"><%= article.description || article.content %></p>
+                    <a href="<%= article.url %>" target="_blank" class="btn btn-outline-secondary">Read more</a>
+                    <div class="card-img" style="background-image:url('<%=article.urlToImage%>')"></div>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <%= article.publishedAt.slice(0, 10) %>
+                </div>
+            </div>        
+        <% }) %>
+    </div>
+    
+    <footer class="made">
+        <p>Made with ❤️ Mythri</p>
+        <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button">Top</a>
+    </footer>
+</body>
+</html>

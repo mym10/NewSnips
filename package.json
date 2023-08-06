@@ -1,0 +1,18 @@
+{
+  "name": "news-project",
+  "version": "1.0.0",
+  "description": "A javascript automation project that gives top headlined of news around the world!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mythri",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsdom": "^22.1.0"
+  }
+}
